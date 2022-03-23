@@ -1,269 +1,304 @@
-body{
-    padding-left: 5%;
-    padding-right: 5%;
+body {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-a, a:hover, a:visited, a:active {
+a,
+a:hover,
+a:visited,
+a:active {
   color: inherit !important;
   text-decoration: none !important;
- }
-
-header{
-    font-size: 25px;
-    background: #F8F9FA;
-    height: 85px;
-    padding: 1.5%;
 }
 
-.align-left{
-    text-align: left;
+header {
+  font-size: 25px;
+  background: #f8f9fa;
+  height: 85px;
+  padding: 1.5%;
 }
 
-.align-right{
-    text-align: right;
+.align-left {
+  text-align: left;
 }
 
-.align-center{
-    text-align: center;
+.align-right {
+  text-align: right;
 }
 
-.search{
-    width: 98%;
-    margin-left: 1%;
-    margin-top: 1%;
-    height: 50px;
-    border: solid 1px grey;
-    border-radius: 6px;
-    padding-left: 2%;
+.align-center {
+  text-align: center;
+}
+
+.user-logo {
+  width: 100px;
+}
+
+.user-div {
+  margin: 5%;
+  text-align: center;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.search {
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 1%;
+  height: 50px;
+  border: solid 1px grey;
+  border-radius: 6px;
+  padding-left: 2%;
 }
 
 input::placeholder {
-    color: grey;
+  color: grey;
 }
 
-.cont-princ{
-    margin-top: 25px;
+.cont-princ {
+  margin-top: 25px;
 }
 
-.card-div{
-    border-radius: 8px;
-    border: solid 1px grey;
-    padding: 0px;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    margin-bottom: 50px;
-    margin-left: 5%;
+.card-div {
+  border-radius: 8px;
+  border: solid 1px grey;
+  padding: 0px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-bottom: 50px;
+  margin-left: 5%;
 }
 
-.img-grid{
-    width: 100%;
-    height: 60%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+.img-grid {
+  width: 100%;
+  height: 60%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
-.card-cont{
-    padding: 5%;
-    padding-bottom: 0;
+.card-cont {
+  padding: 5%;
+  padding-bottom: 0;
 }
 
-.fa-message{
-    margin-right: 3%;
+.fa-message {
+  margin-right: 3%;
 }
 
-.like-btn{
-    background: red;
-    color: white;
-    border: none;
-    height: 40px;
-    border-radius: 6px;
-    float: right;
-    margin-right: 5%;
+.like-btn {
+  background: red;
+  color: white;
+  border: none;
+  height: 40px;
+  border-radius: 6px;
+  float: right;
+  margin-right: 5%;
 }
 
-.like-btn:hover{
-    background: white;
-    color: black;
+.like-btn:hover {
+  background: white;
+  color: black;
 }
 
-.fa-circle-check{
-    color: lightgreen;
-    font-size: 60px;
-    margin-bottom: 20px;
+.no-like-btn {
+  background: white;
+  color: red;
+  border: none;
+  height: 40px;
+  border-radius: 6px;
+  float: right;
+  margin-right: 5%;
 }
 
-.input-login{
-    margin: 15px;
-    border-radius: 20px;
-    text-align: center;
+.load {
+  margin-top: 50px;
 }
 
-.input-login::placeholder{
-    text-align: center;
+.fa-circle-check {
+  color: lightgreen;
+  font-size: 60px;
+  margin-bottom: 20px;
 }
 
-#login-btn{
-    background: red;
-    border-radius: 20px;
-    color: wheat;
-    border: none;
-    width: 75px;
-    height: 30px;
+.input-login {
+  margin: 15px;
+  border-radius: 20px;
+  text-align: center;
 }
 
-.cerrar{
-    background: red;
-    border-radius: 20px;
-    color: wheat;
-    border: none;
-    width: 125px;
-    height: 33px;
+.input-login::placeholder {
+  text-align: center;
 }
 
-#msg{
-    color: red;
-    margin-top: 20px;
+#login-btn {
+  background: red;
+  border-radius: 20px;
+  color: wheat;
+  border: none;
+  width: 75px;
+  height: 30px;
 }
 
-#login-btn:hover, .cerrar:hover, #new-btn:hover{
-    background: grey;
+.cerrar {
+  background: red;
+  border-radius: 20px;
+  color: wheat;
+  border: none;
+  width: 125px;
+  height: 33px;
 }
 
-.login-div{
-    padding: 5%;
+#msg {
+  color: red;
+  margin-top: 20px;
 }
 
-.fa-user-check{
-    font-size: 40px;
-    color: rebeccapurple;
+#login-btn:hover,
+.cerrar:hover,
+#new-btn:hover {
+  background: grey;
 }
 
-.loading{
-    width: 50px;
+.login-div {
+  padding: 5%;
 }
 
-.princ-div{
-    text-align: center;
-    margin-top: 7%;
+.fa-user-check {
+  font-size: 40px;
+  color: rebeccapurple;
 }
 
-.name{
-    margin-top: 1%;
-    margin-bottom: 2%;
+.loading {
+  width: 50px;
 }
 
-.fa-pen{
-    margin-left: 1%;
-    font-size: 23px;
-    cursor: pointer;
+.princ-div {
+  text-align: center;
+  margin-top: 7%;
 }
 
-.check-user{
-    color: green;
-    margin-left: 3%;
-    margin-left: 1%;
-    font-size: 25px;
-    cursor: pointer;
+.name {
+  margin-top: 1%;
+  margin-bottom: 2%;
 }
 
-#input-user{
-    margin: 1%;
+.fa-pen {
+  margin-left: 1%;
+  font-size: 23px;
+  cursor: pointer;
 }
 
-.hide{
-    display: none;
+.check-user {
+  color: green;
+  margin-left: 3%;
+  margin-left: 1%;
+  font-size: 25px;
+  cursor: pointer;
 }
 
-.pointer{
-    cursor: pointer;
+#input-user {
+  margin: 1%;
 }
 
-#error-msg{
-    color: red;
+.hide {
+  display: none;
 }
 
-#new-btn{
-    background: red;
-    border-radius: 20px;
-    color: wheat;
-    border: none;
-    width: 150px;
-    height: 40px;
-    margin-bottom: 50px;
+.pointer {
+  cursor: pointer;
 }
 
-#sel-desc{
-    border-radius: 22px;
-    padding: 5%;
-    height: 150px;
+#error-msg {
+  color: red;
+}
+
+#new-btn {
+  background: red;
+  border-radius: 20px;
+  color: wheat;
+  border: none;
+  width: 150px;
+  height: 40px;
+  margin-bottom: 50px;
+}
+
+#sel-desc {
+  border-radius: 22px;
+  padding: 5%;
+  height: 150px;
 }
 
 /* Mobile */
 @media (max-width: 575.98px) {
-    body{
-        padding: 0%;
-    }
-    header{
-        height: 100px;
-        font-size: 25px;
-        padding: 5.5%;
-    }
-    #login-btn, .cerrar{
-        width: 150px;
-        height: 50px;
-        margin-top: 20px;
-        font-size: 22px;
-    }
-    .input-login{
-        height: 50px;
-        width: 250px;
-        font-size: 22px;
-    }
+  body {
+    padding: 0%;
+  }
+  header {
+    height: 100px;
+    font-size: 25px;
+    padding: 5.5%;
+  }
+  #login-btn,
+  .cerrar {
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 22px;
+  }
+  .input-login {
+    height: 50px;
+    width: 250px;
+    font-size: 22px;
+  }
 
-    .fa-user-check {
-        font-size: 65px;
-    }
+  .fa-user-check {
+    font-size: 65px;
+  }
 
-    #msg{
-        font-size: 25px;
-    }
-    .login-div {
-        padding: 10%;
-    }
-    .rounded-circle{
-        width: 40%;
-    }
-    .name{
-        margin-top: 5%;
-         margin-bottom: 5%;
-    }
-    h2{
-        font-size: 40px !important;
-    }
-    #input-user{
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-    .fa-circle-check{
-        font-size: 90px;
-    }
-    h4{
-        font-size: 40px !important;
-    }
-    .loading{
-        width: 100px;
-    }
-    h5{
-        font-size: 25px !important;
-    }
-    .cont-princ {
+  #msg {
+    font-size: 25px;
+  }
+  .login-div {
+    padding: 10%;
+  }
+  .rounded-circle {
+    width: 40%;
+  }
+  .name {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  h2 {
+    font-size: 40px !important;
+  }
+  #input-user {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .fa-circle-check {
+    font-size: 90px;
+  }
+  h4 {
+    font-size: 40px !important;
+  }
+  .loading {
+    width: 100px;
+  }
+  h5 {
+    font-size: 25px !important;
+  }
+  .cont-princ {
     margin-top: 50px;
-    }
-    #sel-desc{
-        height: 300px;
-        width: 100%;
-    }
-    .modal-body{
-        text-align: left;
-    }
+  }
+  #sel-desc {
+    height: 300px;
+    width: 100%;
+  }
+  .modal-body {
+    text-align: left;
+  }
+  .user-div {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
