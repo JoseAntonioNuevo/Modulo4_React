@@ -4,7 +4,14 @@ import Navbar from "./components/navbar";
 import Profile from "./components/profile";
 import SearchBar from "./components/searchBar";
 import PostList from "./components/postList";
+import Login from "./components/login";
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -23,6 +30,7 @@ class App extends React.Component {
       }.bind(this),
       3000
     );
+    // window.localStorage.clear();
   }
 
   handleScreen(screen) {
@@ -32,9 +40,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        {localStorage.getItem('token') === null ? (<Login/>) : (
+          <div>
         <Navbar data={{ handleScreen: this.handleScreen.bind(this) }} />
         {this.state.screen != 0 ? (
-          <Profile></Profile>
+          <Profile/>
         ) : (
           <div>
             <SearchBar
@@ -50,6 +60,8 @@ class App extends React.Component {
               </div>
             </div>
           </div>
+        )}
+        </div>
         )}
       </div>
     );

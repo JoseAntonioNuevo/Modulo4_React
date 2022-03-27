@@ -11,6 +11,15 @@ a:active {
   text-decoration: none !important;
 }
 
+.input-login{
+  margin: 5px;
+}
+
+.error-msg{
+    color: #A26A6E;
+    margin: 20px;
+}
+
 header {
   font-size: 25px;
   background: #f8f9fa;
