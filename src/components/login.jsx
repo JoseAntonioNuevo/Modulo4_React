@@ -4,7 +4,7 @@ class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: 0,
+      error: false,
       data: '',
       email: '',
       pass: ''
@@ -19,17 +19,24 @@ class Post extends React.Component {
     this.setState({ pass: psw });
   }
 
-onLoginUser = () => {
+onLoginComplete = () => {
     if (this.state.email != "" && this.state.pass != "") {
     axios.post('https://three-points.herokuapp.com/api/login', {
         username: this.state.email,
         password: this.state.pass
-    },)
+    },
+    {
+    timeout: 2000
+    })
     .then(res => {
+      if (res.status == 200){
         localStorage.setItem('token', res.data.token);
         window.location.reload(false);
+      }else{
+        this.setState({ error: true });
+      }
    }).catch((err) => {
-        this.setState({ error: 1 });
+        this.setState({ error: true });
         })
 }else{
     alert("Rellena todos los campos");
@@ -39,7 +46,7 @@ onLoginUser = () => {
   render() {
     return (
       <div className="login-div">
-          {this.state.error == 1 && (<div className="error-msg">Email o Contraseña incorrecto</div>)}
+          {this.state.error === true && (<div className="error-msg">Email o Contraseña incorrecto</div>)}
         <label>Email</label>
         <br></br>
         <input onChange={event => this.setEmail(event.target.value)} className="input-login" type="text"></input>
@@ -48,7 +55,7 @@ onLoginUser = () => {
         <br></br>
         <input onChange={event => this.setPassword(event.target.value)} className="input-login" type="password"></input>
         <br></br>
-        <button onClick={this.onLoginUser} className="btn btn-primary">Login</button>
+        <button onClick={this.onLoginComplete} className="btn btn-primary">Login</button>
         <h1>{this.state.data}</h1>
       </div>
     );

@@ -1,22 +1,18 @@
 import React from "react";
-class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.props = props;
-  }
+import {
+ useNavigate
+} from "react-router-dom";
 
-  handleScreenChange() {
-    this.props.onSelectScreen(1);
-  }
-
-  render() {
+  function Navbar() {
+    let navigate = useNavigate();
     return (
       <header>
         <div className="row">
           <div className="col-10 align-left">
             <a
               className="pointer"
-              onClick={() => this.props.data.handleScreen(0)}
+              onClick={() => 
+              navigate("/")}
             >
               <i className="fa-brands fa-twitter"></i>
               Three pics
@@ -24,7 +20,8 @@ class Navbar extends React.Component {
           </div>
           <div className="col-2 align-right">
             <i
-              onClick={() => this.props.data.handleScreen(1)}
+              onClick={() => 
+              navigate("/profile")}
               className="fa-solid fa-user-ninja pointer"
             ></i>
           </div>
@@ -32,6 +29,5 @@ class Navbar extends React.Component {
       </header>
     );
   }
-}
 
 export default Navbar;
