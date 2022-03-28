@@ -217,6 +217,10 @@ input::placeholder {
   cursor: pointer;
 }
 
+.fa-heart{
+  margin-right: 5px;
+}
+
 #error-msg {
   color: red;
 }

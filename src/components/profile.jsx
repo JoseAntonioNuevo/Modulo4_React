@@ -1,23 +1,46 @@
 import React from "react";
-import user from "../img/user.png";
+import { Navigate } from "react-router-dom";
+import axios from 'axios';
 class Profile extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: []
+    };
+  }
+
+    componentDidMount() {
+    const token = localStorage.getItem('token');
+    axios.get('https://three-points.herokuapp.com/api/users/6136944fcd79ba24707e2f82',
+    { headers: {"Authorization" : `Bearer ${token}`} })
+      .then(res => {
+        if (res.status === 401){
+          window.localStorage.clear();
+          window.location.href = "/login";
+        }else{
+          const user = res.data; 
+          this.setState({ user: user });
+        }
+    }).catch((err) => {
+          window.localStorage.clear();
+          window.location.href = "/login";
+    })
+    }
+
   render() {
-    return (
+  return (
       <div className="user-div">
-        <img className="user-logo" src={user} alt={"user"} />
+        <img className="user-logo" src={this.state.user.avatar} alt={"user"} />
         <br></br>
         <br></br>
-        <h4>@User</h4>
+        <h4>@{this.state.user.name}</h4>
         <br></br>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare
-          neque et lobortis malesuada. Proin commodo nibh ante, ut posuere diam
-          efficitur non. Aenean auctor pellentesque lacus, vitae maximus tortor
-          varius nec. Vestibulum rutrum enim eu elit aliquam, non vestibulum sem
-          malesuada. Vestibulum nec elementum sapien. Maecenas nec orci nec leo
-          sodales rutrum id in urna. Cras eu elit ex.
+          {this.state.user.bio}
         </p>
       </div>
+    
     );
   }
 }

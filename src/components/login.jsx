@@ -29,9 +29,9 @@ onLoginComplete = () => {
     timeout: 2000
     })
     .then(res => {
-      if (res.status == 200){
+      if (res.status === 200){
         localStorage.setItem('token', res.data.token);
-        window.location.reload(false);
+        window.location.href = "/";
       }else{
         this.setState({ error: true });
       }

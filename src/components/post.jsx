@@ -30,7 +30,7 @@ class Post extends React.Component {
       <div className="card-div">
         <img
           className="img-grid"
-          src="https://source.unsplash.com/random/800x800"
+          src={this.props.image}
         ></img>
         <div className="card-cont align-left">
           <button
@@ -40,7 +40,7 @@ class Post extends React.Component {
             <i className="fa-solid fa-heart"></i>
             {this.state.likes}
           </button>
-          <p>{this.props.time} ago</p>
+          <p>{this.props.time} days ago</p>
           <p>@{this.props.user}</p>
           <p className="desc">{this.props.title}</p>
           <p className="pointer">
