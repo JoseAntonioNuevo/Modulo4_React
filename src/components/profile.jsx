@@ -1,48 +1,40 @@
-import React from "react";
-import { Navigate } from "react-router-dom";
-import axios from 'axios';
-class Profile extends React.Component {
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+function Profile() {
+  const [user, setUser] = useState([]);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: []
-    };
-  }
-
-    componentDidMount() {
-    const token = localStorage.getItem('token');
-    axios.get('https://three-points.herokuapp.com/api/users/6136944fcd79ba24707e2f82',
-    { headers: {"Authorization" : `Bearer ${token}`} })
-      .then(res => {
-        if (res.status === 401){
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    axios
+      .get(
+        "https://three-points.herokuapp.com/api/users/6136944fcd79ba24707e2f82",
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((res) => {
+        if (res.status === 401) {
           window.localStorage.clear();
           window.location.href = "/login";
-        }else{
-          const user = res.data; 
-          this.setState({ user: user });
+        } else {
+          const user = res.data;
+          setUser(user);
         }
-    }).catch((err) => {
-          window.localStorage.clear();
-          window.location.href = "/login";
-    })
-    }
+      })
+      .catch((err) => {
+        window.localStorage.clear();
+        window.location.href = "/login";
+      });
+  });
 
-  render() {
   return (
-      <div className="user-div">
-        <img className="user-logo" src={this.state.user.avatar} alt={"user"} />
-        <br></br>
-        <br></br>
-        <h4>@{this.state.user.name}</h4>
-        <br></br>
-        <p>
-          {this.state.user.bio}
-        </p>
-      </div>
-    
-    );
-  }
+    <div className="user-div">
+      <img className="user-logo" src={user.avatar} alt={"user"} />
+      <br></br>
+      <br></br>
+      <h4>@{user.name}</h4>
+      <br></br>
+      <p>{user.bio}</p>
+    </div>
+  );
 }
 
 export default Profile;

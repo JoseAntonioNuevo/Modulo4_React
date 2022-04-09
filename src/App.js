@@ -6,14 +6,7 @@ import SearchBar from "./components/searchBar";
 import PostList from "./components/postList";
 import Login from "./components/login";
 import React from "react";
-import axios from 'axios';
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Routes,
-  Link
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -41,43 +34,64 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-    <Routes>
-      <Route path="/" element={
-        <div className="App">
-          {localStorage.getItem('token') === null ? (<Login/>) : (
-            <div>
-          <Navbar data={{ handleScreen: this.handleScreen.bind(this) }} />
-          <SearchBar handleChange={(e) => this.setState({ search: e.target.value })} />
-          <div className="cont-princ">
-           <div id="cards" className="row align-center">
-             {this.state.state === 1 ? (
-               <PostList search={this.state.search} />
-             ) : (
-               <h1 className="load">Loading...</h1>
-             )}
-             </div>  
-           </div>
-         </div>
-         )}
-        </div>
-      } />
-      <Route path="profile" element={
-      <div className="App">
-      {localStorage.getItem('token') === null ? (<Login/>) : (
-        <div>
-        <Navbar data={{ handleScreen: this.handleScreen.bind(this) }} />
-        <Profile />
-        </div>
-      )}
-      </div>
-      } />
-      <Route path="login" element={
-        <div className="App">
-          <Login/>
-        </div>
-        } />
-    </Routes>
-  </BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="App">
+                {localStorage.getItem("token") === null ? (
+                  <Login />
+                ) : (
+                  <div>
+                    <Navbar
+                      data={{ handleScreen: this.handleScreen.bind(this) }}
+                    />
+                    <SearchBar
+                      handleChange={(e) =>
+                        this.setState({ search: e.target.value })
+                      }
+                    />
+                    <div className="cont-princ">
+                      <div id="cards" className="row align-center">
+                        {this.state.state === 1 ? (
+                          <PostList search={this.state.search} />
+                        ) : (
+                          <h1 className="load">Loading...</h1>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            }
+          />
+          <Route
+            path="profile"
+            element={
+              <div className="App">
+                {localStorage.getItem("token") === null ? (
+                  <Login />
+                ) : (
+                  <div>
+                    <Navbar
+                      data={{ handleScreen: this.handleScreen.bind(this) }}
+                    />
+                    <Profile />
+                  </div>
+                )}
+              </div>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <div className="App">
+                <Login />
+              </div>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     );
   }
 }
